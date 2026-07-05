@@ -5,7 +5,7 @@
 共包含3大模块：
 - vision encoder： 使用的是vit (权重来自于 Openclip’s ViT-bigG)
 - llm : Qwen-7B
-- adapter: 将图片特征映射到llm编码空间， 使用的是 a single-layer cross-attention module ， 其中设置一组可以学习的query，图片特征作为key和value
+- adapter: 将图片特征映射到llm编码空间， 使用的是 a single-layer cross-attention module ，将图像特征压缩到固定长度256. 做法是设置一组可以学习的query，图片特征作为key和value。该attention中使用2D绝对位置编码。
 
 训练方式：3阶段训练
 - 1，2 是预训练阶段,
