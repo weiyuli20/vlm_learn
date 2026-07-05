@@ -1,4 +1,5 @@
 # 梳理qwenvl-qwen2vl-qwen2.5vl-qwen3vl 系列进化
+reference:https://zhuanlan.zhihu.com/p/1955585353625871361
 ## Qwen2VL
 模型架构
 <img width="1288" height="544" alt="image" src="https://github.com/user-attachments/assets/4234f84e-7ec9-494e-87aa-c6e8bde4657c" />
