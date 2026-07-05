@@ -38,7 +38,13 @@
 - 2d rope 只用在vit中
   - 实现方式：对一个表示空间位置的向量，假设为（1，3，dim)拆分为上半部分（代表h方向），和下半部分（代表w方向)（1，3，0:dim//2) (1,3,dim//2:) 分别应用1d rope,然后合并
 - M rope 用在llm中
+  <img width="880" height="287" alt="image" src="https://github.com/user-attachments/assets/100fff10-e6c2-4ead-8881-7f798399bd3f" />
+
 
 视频处理
 - ViT：帧内固定只用 2D-RoPE，无时间；
 - LLM M-RoPE：T 只按帧的序列序号简单自增（第 1 帧 T=1，第 2 帧 T=2，不考虑真实 FPS 时间间隔）。
+
+论文中的一些结论：
+- 不能一味增加image_size，过大了之后，效果不一定好
+- 验证scaling law ,发布2B、8B、72B等系列模型， 实验结果表明随着模型参数增加，数据增加，模型性能还在持续提升。
