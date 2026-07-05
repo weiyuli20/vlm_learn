@@ -130,5 +130,21 @@ class QwenVLVisualAdapter(nn.Module):
         return vis_tokens
 ```
 
+2D绝对位置编码伪代码
+```
+# 模拟ViT输出
+visual_feat = torch.randn(B, N_patch, D)  # [2, 1024, 1024]
+
+# 模拟2D网格位置编码
+grid_pos = torch.randn(H, W, D)  # [32, 32, 1024]
+pos_emb = grid_pos.reshape(-1, D)  # [1024, 1024]
+
+# 扩展batch维度
+pos_emb = pos_emb.unsqueeze(0)  # [1, 1024, 1024]
+
+# 广播相加
+visual_feat_with_pos = visual_feat + pos_emb
+```
+
 
 
