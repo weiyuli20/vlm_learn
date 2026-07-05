@@ -16,3 +16,5 @@
 - dpo
 
 MRoPE改进：对齐了现实video的帧率，即对齐了绝对时间
+
+理解window attention
